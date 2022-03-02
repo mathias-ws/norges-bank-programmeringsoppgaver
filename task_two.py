@@ -14,8 +14,8 @@ def generate_ip_range(start_ip, end_ip):
     ip_range = []
 
     # Casting to ints is inspired by: https://stackoverflow.com/a/5306094
-    first_ip = [int(ip) for ip in (start_ip.split("."))]
-    last_ip = [int(ip) for ip in (end_ip.split("."))]
+    first_ip = [int(octet) for octet in (start_ip.split("."))]
+    last_ip = [int(octet) for octet in (end_ip.split("."))]
 
     temp_ip = first_ip
 
