@@ -27,11 +27,8 @@ def generate_ip_range(start_ip, end_ip):
         # Counts up every octet.
         for i in (3, 2, 1):
             if temp_ip[i] == 256:
-                temp_ip[i] = 1
+                temp_ip[i] = 0
                 temp_ip[i - 1] += 1
-            elif temp_ip[3] == 255:
-                temp_ip[3] = 1
-                temp_ip[2] += 1
 
         ip_range.append(Ip(".".join(map(str, temp_ip)), False))
 
