@@ -50,6 +50,21 @@ class TestTaskTwo(unittest.TestCase):
         ip_range = generate_ip_range("10.254.255.255", "10.255.255.254")
         self.assertEqual(65536, len(ip_range))
 
+    def test_find_last_scanned_ip_6_generated_ips(self):
+        self.assertEqual("10.0.0.5", find_last_scanned_ip(generate_ip_range("10.0.0.1", "10.0.0.6")))
+
+    def test_find_last_scanned_ip_5_generated__ips(self):
+        self.assertEqual("10.0.0.3", find_last_scanned_ip(generate_ip_range("10.0.0.1", "10.0.0.5")))
+
+    def test_find_last_scanned_ip_4_generated__ips(self):
+        self.assertEqual("10.0.0.1", find_last_scanned_ip(generate_ip_range("10.0.0.1", "10.0.0.4")))
+
+    def test_find_last_scanned_ip_3_generated__ips(self):
+        self.assertEqual("10.0.0.3", find_last_scanned_ip(generate_ip_range("10.0.0.1", "10.0.0.3")))
+
+    def test_find_last_scanned_ip_generated__2_ips(self):
+        self.assertEqual("10.0.0.1", find_last_scanned_ip(generate_ip_range("10.0.0.1", "10.0.0.2")))
+
 
 if __name__ == '__main__':
     unittest.main()
