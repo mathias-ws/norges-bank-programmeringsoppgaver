@@ -17,16 +17,18 @@ def find_last_scanned_ip(ip_list):
 
     while True:
         i = (i + 1) % len(ip_list)
+
+        # Checks that the ip is not already checked.
         if not ip_list[i].checked:
             ip_list[i].checked = True
             counter += 1
 
+            # Checks if the algorithm is done.
             if counter == len(ip_list):
                 return ip_list[i].ip
 
+            # Counting up the index to skip the already checked ips.
             while ip_list[((i + 1) % len(ip_list))].checked:
                 i = (i + 1) % len(ip_list)
 
             i = (i + 1) % len(ip_list)
-
-
