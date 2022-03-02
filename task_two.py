@@ -35,6 +35,7 @@ def generate_ip_range(start_ip, end_ip):
     return ip_range
 
 
+# Function that finds the last scanned ip according to the specifications.
 def find_last_scanned_ip(ip_list):
     i = 0
     counter = 0
