@@ -1,16 +1,16 @@
 from dataclasses import dataclass
 
 
-# Class used to define an ip object.
 @dataclass
 class Ip:
+    """Class used to define an ip object."""
     ip: str
     checked: bool
 
 
 # Function inspired by: https://tkit.dev/2011/09/11/how-to-generate-an-ip-range-list-in-python/
-# Function that takes in a start and an end ip and generates a list of the ips in the range.
 def generate_ip_range(start_ip, end_ip):
+    """Function that takes in a start and an end ip and generates a list of the ips in the range."""
     ip_range = []
 
     # Casting to ints is inspired by: https://stackoverflow.com/a/5306094
@@ -35,8 +35,8 @@ def generate_ip_range(start_ip, end_ip):
     return ip_range
 
 
-# Function that finds the last scanned ip according to the specifications.
 def find_last_scanned_ip(ip_list):
+    """Function that finds the last scanned ip according to the specifications."""
     i = 0
     counter = 0
 
