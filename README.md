@@ -12,7 +12,7 @@ All results are printed to the terminal.
 
 # Task 1
 The task 1 takes a path of a folder that contains at least one csv file
-and a txt file. Furthermore, it opens the txt file and compares it lines
+and a txt file. Furthermore, it opens the txt file and compares its lines
 with the lines in the csv file(s). When it gets a match, it returns 
 the csv file name and the line of where the function got a match.
 
