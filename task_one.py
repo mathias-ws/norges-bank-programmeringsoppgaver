@@ -47,7 +47,14 @@ def compare_ips_in_files(path):
 
     txt_file = find_txt_file(files)
 
+    if txt_file is None:
+        return "No txt file found in folder."
+
     files.remove(txt_file)
+
+    if len(files) == 0:
+        return "No csv file(s) found in folder."
+
     txt_file = read_file(path + '/' + txt_file)
 
     for csv_file in files:
@@ -55,4 +62,4 @@ def compare_ips_in_files(path):
 
         if line is not None:
             return "Found match in csv file: " + csv_file + " on line: " + str(line + 1)
-    return "No matches found."
+    return "No matches found or empty files."
